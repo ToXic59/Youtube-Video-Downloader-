@@ -1,0 +1,107 @@
+<html>
+<head>
+
+
+
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    
+    .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+  </style>      
+
+
+<title>Youtube Video Downloader </title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+</head>
+<body>
+</body>
+<body class="bg-dark">
+  <div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+      <div class="card-header bg-info">
+        <h5></h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="text-weight"><b>Video Link </b></label>
+              <input type="txt" name="link" class="form-control link" required>
+            </div>
+          </div>
+        </div>
+        <form class="form-download">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="text-weight"><b>Select video quality:</b></label>
+                <select class="form-control formte" required>
+                  <option selected disabled>Video Quality:</option>
+                  <option value="mp3">MP3 Audio</option>
+                  <option value="mp4a">144p Video</option>
+                  <option value="360">360 Video</option>
+                  <option value="480">480 Video</option>
+                  <option value="720">720 Video</option>
+                  <option value="1080">1080 Video</option>
+                  <option value="4k">4K Video</option>
+                  <option value="8k">8k Video</option>
+               
+                </select>
+            
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mt-4 download-video">
+                <button class="btn btn-success btn-block click-btn-down" type="submit">Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <center>
+
+            <button class ="button button1" onClick="window.location.href=window.location.href">Convert another video</button>
+    </center>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $(".click-btn-down").click(function(){
+      var link = $(".link").val();
+    var fromate = $(".formte").children("option:selected").val();
+    var src =""+link+"="+fromate+"";
+    downloadVideo(link,fromate);
+  });
+  function downloadVideo(link,fromate) {
+      $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+fromate+'"></iframe>');
+  }
+
+</script>
+<!-- madebyTOXIC -->
